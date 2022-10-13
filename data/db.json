@@ -1,0 +1,49 @@
+{
+  "events": [
+    {
+      "eventType": "workout",
+      "time": "9AM",
+      "id": 1
+    },
+    {
+      "eventType": "lunch",
+      "time": "12PM",
+      "id": 2
+    },
+    {
+      "eventType": "study",
+      "time": "3PM",
+      "id": 3
+    },
+    {
+      "eventType": "Gym",
+      "time": "10AM",
+      "id": 4
+    },
+    {
+      "eventType": "gym",
+      "time": "10am",
+      "id": 5
+    },
+    {
+      "eventType": "sleep",
+      "time": "10pm",
+      "id": 6
+    },
+    {
+      "eventType": "ugvi",
+      "time": "ibi",
+      "id": 7
+    },
+    {
+      "eventType": "bibi",
+      "time": "bkb",
+      "id": 8
+    },
+    {
+      "eventType": "agnoang",
+      "time": "AWEGKN",
+      "id": 9
+    }
+  ]
+}
