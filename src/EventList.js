@@ -4,8 +4,8 @@ const EventList = ({ USER_EVENTS, title }) => {
     
     
 const eventStyle = {  
-    backgroundColor: "grey",
-    display: "inline-block"
+    backgroundColor: "grey"
+    // display: "inline-block"
     
 
 };
