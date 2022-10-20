@@ -1,16 +1,35 @@
-// import { useParams } from 'react-router-dom';
-// import useFetch from './useFetch';
+import { useHistory, useParams } from 'react-router-dom';
+import useFetch from './useFetch';
 
-// const EventDetails = () => {
-//     const { id } = useParams();
-//     const { data: event, error, isPending } = useFetch('http://localhost:5000/events/' + id);
-//     return ( 
-//         <div className="event-details">
-//             { isPending && <div>Loading...</div> }
-//             { error && <div>{ error }</div> }
+
+const EventDetails = () => {
+    const { id } = useParams();
+    const { data: event, error, isPending } = useFetch('http://localhost:8000/events/' + id);
+    const history = useHistory();
+
+    const handleClick = () => {
+        fetch('http://localhost:8000/events/'+ event.id, {
+            method: 'DELETE'
+        } 
+        ). then (() => {
+            history.push('/');
+        })
+    }
+
+    return ( 
+        <div className="event-details">
+            { isPending && <div>Loading...</div> }
+            { error && <div>{ error }</div> }
+            { event && (
+                <article>
+                    <h2>{ event.eventType }</h2>
+                    <div>{ event.time }</div>
+                    <button onClick={handleClick}>Delete Event</button>
+                </article>
+            )}
             
-//         </div>
-//      );
-// }
+        </div>
+     );
+}
  
-// export default EventDetails;
+export default EventDetails;
