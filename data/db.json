@@ -1,19 +1,9 @@
 {
   "events": [
     {
-      "eventType": "Gym",
-      "time": "10AM",
-      "id": 4
-    },
-    {
       "eventType": "eat",
       "time": "8am",
       "id": 10
-    },
-    {
-      "eventType": "agaeg",
-      "time": "5AM",
-      "id": 11
     },
     {
       "eventType": "atahaere",

@@ -1,20 +1,23 @@
 import { useState } from "react";
-import { useHistory } from "react-router-dom";
-
+import useFetch from './useFetch';
+import { useHistory, useParams } from 'react-router-dom';
 import TimePicker from "rc-time-picker";
 import 'rc-time-picker/assets/index.css';
 
-const Form = () => {
-    const [eventType, setEventType] = useState('');
-    const [time, setTime] = useState('');
-    const [isPending, setIsPending] = useState(false);
+const EditForm = () => {
+    const { id } = useParams();
+    const { data: event  } = useFetch('http://localhost:8000/events/' + id);
+    
+    const [eventType, setEventType] = useState(event.eventType);
+    const [time, setTime] = useState(event.time);
+    
     const history = useHistory();
 
-    const handleSubmit = (e) => {
+    const handleEdit = (e) => {
         e.preventDefault();
         
         const task = { eventType, time };
-        setIsPending(true); 
+        
 
         fetch('http://localhost:8000/events', {
             method: 'POST',
@@ -22,7 +25,7 @@ const Form = () => {
             body: JSON.stringify(task)
 
         }).then(() => {
-            setIsPending(false);
+            
             history.push('/');
 
 
@@ -31,7 +34,7 @@ const Form = () => {
     }
     return ( 
         <div className="form">
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={handleEdit}>
                 <label>Event Name:</label>
                 <input 
                     type="text" 
@@ -53,12 +56,11 @@ const Form = () => {
                         onChange={e => setTime(e.format('LT'))}
                     />
                 </div>
-                { !isPending && <button>Add Event</button> }
-                { isPending && <button>Adding Event...</button> }
+                
                 
             </form>
         </div>
      );
 }
  
-export default Form;
+export default EditForm;
