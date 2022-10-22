@@ -14,7 +14,7 @@ const EventDetails = () => {
             method: 'DELETE'
         } 
         ). then (() => {
-            history.push('/');
+            history.push('/checklist');
         })
     };
     return ( 
@@ -25,6 +25,7 @@ const EventDetails = () => {
                 <article>
                     <h2>{ event.eventType }</h2>
                     <div>{ event.time }</div>
+                    <div>{ event.eventNote }</div>
                     <button onClick={handleClick}>Delete Event</button>
                     <button onClick={EditForm}>Edit Event</button>
                 </article>

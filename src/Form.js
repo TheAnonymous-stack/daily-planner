@@ -6,6 +6,7 @@ import 'rc-time-picker/assets/index.css';
 
 const Form = () => {
     const [eventType, setEventType] = useState('');
+    const [eventNote, setEventNote] = useState('');
     const [time, setTime] = useState('');
     const [isPending, setIsPending] = useState(false);
     const history = useHistory();
@@ -13,7 +14,7 @@ const Form = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
         
-        const task = { eventType, time };
+        const task = { eventType, time, eventNote };
         setIsPending(true); 
 
         fetch('http://localhost:8000/events', {
@@ -23,7 +24,7 @@ const Form = () => {
 
         }).then(() => {
             setIsPending(false);
-            history.push('/');
+            history.push('/checklist');
 
 
         })
@@ -53,6 +54,15 @@ const Form = () => {
                         onChange={e => setTime(e.format('LT'))}
                     />
                 </div>
+                <label>Add Notes:</label>
+                <input 
+                    placeholder="Add notes, locations, URL,..."
+                    type="text" 
+                    optional
+                    value={eventNote}
+                    onChange={(e) => setEventNote(e.target.value)}
+                />
+
                 { !isPending && <button>Add Event</button> }
                 { isPending && <button>Adding Event...</button> }
                 
