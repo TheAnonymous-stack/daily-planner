@@ -17,6 +17,10 @@ const Form = () => {
         const task = { eventType, time, eventNote };
         setIsPending(true); 
 
+        if (eventNote === '') {
+            setEventNote('no notes added');
+        };
+
         fetch('http://localhost:8000/events', {
             method: 'POST',
             headers: {"Content-Type": "application/json" },
@@ -60,6 +64,7 @@ const Form = () => {
                     placeholder="Add notes, locations, URL,..."
                     type="text" 
                     optional
+                    
                     value={eventNote}
                     onChange={(e) => setEventNote(e.target.value)}
                     

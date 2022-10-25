@@ -19,6 +19,11 @@ const EventList = ({ USER_EVENTS }) => {
             {USER_EVENTS.map((event) => (
                 
                 <div className="event-preview" key={event.id}>
+                    <input
+                                type="checkbox"
+                                checked={checked}
+                                onChange={handleCheck}
+                            />
                     
                     <Link to={ `/events/${event.id}` }>
                          
@@ -26,11 +31,7 @@ const EventList = ({ USER_EVENTS }) => {
                            <h2>{ event.eventType }</h2>
                         
                            <p>Time: { event.time }</p>
-                           <input
-                                type="checkbox"
-                                checked={checked}
-                                onChange={handleCheck}
-                            />
+                           
                            
                           
                            

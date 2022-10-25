@@ -27,9 +27,10 @@ const EventDetails = () => {
                 <article>
                     <h2>{ event.eventType }</h2>
                     <div>{ event.time }</div>
-                    
+                    {event.hasOwnProperty('eventNote') &&
                     <div>Notes: { event.eventNote }</div>
-                    
+
+}
                     
                     <button onClick={handleClick}>Delete Event</button>
                     <button onClick={EditForm}>Edit Event</button>

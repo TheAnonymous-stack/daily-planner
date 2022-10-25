@@ -1,20 +1,16 @@
 {
   "events": [
     {
-      "eventType": "atahaere",
-      "time": "8:41 AM",
-      "id": 12
+      "eventType": "notes",
+      "time": "3:32 PM",
+      "eventNote": "notes exist",
+      "id": 1
     },
     {
-      "eventType": "aergaerg",
-      "time": "8:29 PM",
-      "id": 13
-    },
-    {
-      "eventType": "sleep",
-      "time": "11:12 PM",
-      "eventNote": "home",
-      "id": 14
+      "eventType": "no notees",
+      "time": "8:32 AM",
+      "eventNote": "",
+      "id": 2
     }
   ]
 }
