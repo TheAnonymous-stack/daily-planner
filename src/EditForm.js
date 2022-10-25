@@ -10,13 +10,13 @@ const EditForm = () => {
     
     const [eventType, setEventType] = useState(event.eventType);
     const [time, setTime] = useState(event.time);
-    
+    const [eventNote, setEventNote] = useState(event.eventNote);
     const history = useHistory();
 
     const handleEdit = (e) => {
         e.preventDefault();
         
-        const task = { eventType, time };
+        const task = { eventType, time, eventNote };
         
 
         fetch('http://localhost:8000/events', {
@@ -26,12 +26,13 @@ const EditForm = () => {
 
         }).then(() => {
             
-            history.push('/');
+            history.push('/checklist');
 
 
         })
     
     }
+    
     return ( 
         <div className="form">
             <form onSubmit={handleEdit}>
@@ -56,11 +57,20 @@ const EditForm = () => {
                         onChange={e => setTime(e.format('LT'))}
                     />
                 </div>
+                <label>Add Notes:</label>
+                <input 
+                    
+                    type="text" 
+                    optional
+                    value={eventNote}
+                    onChange={(e) => setEventNote(e.target.value)}
+                    
+                />
                 
                 
             </form>
         </div>
-     );
+    );
 }
  
 export default EditForm;

@@ -32,6 +32,7 @@ const Form = () => {
     }
     return ( 
         <div className="form">
+           
             <form onSubmit={handleSubmit}>
                 <label>Event Name:</label>
                 <input 
@@ -61,8 +62,9 @@ const Form = () => {
                     optional
                     value={eventNote}
                     onChange={(e) => setEventNote(e.target.value)}
+                    
                 />
-
+               
                 { !isPending && <button>Add Event</button> }
                 { isPending && <button>Adding Event...</button> }
                 

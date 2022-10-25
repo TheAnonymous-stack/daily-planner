@@ -9,6 +9,12 @@
       "eventType": "aergaerg",
       "time": "8:29 PM",
       "id": 13
+    },
+    {
+      "eventType": "sleep",
+      "time": "11:12 PM",
+      "eventNote": "home",
+      "id": 14
     }
   ]
 }

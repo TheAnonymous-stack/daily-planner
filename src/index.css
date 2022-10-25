@@ -39,6 +39,9 @@
   max-width: 400px;
   margin: 0 auto;
   text-align: center;
+  background-color: lightgreen;
+  padding: 50px;
+  
 }
 
 .form label {
@@ -109,7 +112,7 @@
 }
 
 .event-details h2 {
-  font-size: 20px;
+  font-size: 40px;
   color: #f1356d;
   margin-bottom: 10px;
 }
@@ -124,6 +127,7 @@
   border-radius: 8px;
   cursor: pointer;
 }
+
 
 
 

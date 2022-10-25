@@ -1,10 +1,17 @@
-
+import * as React from 'react';
 import { Link } from 'react-router-dom';
 const EventList = ({ USER_EVENTS }) => {
+
+    const [checked, setChecked] = React.useState(false);
+    const handleCheck = () => {
+        setChecked(!checked);
+    };
     
     
 
     return (
+        // <input type="checkbox" id="accept" name="accept" value="yes" />  
+        // <label for="accept"> Accept </label>
         
         <div className="event-list">
             
@@ -19,6 +26,15 @@ const EventList = ({ USER_EVENTS }) => {
                            <h2>{ event.eventType }</h2>
                         
                            <p>Time: { event.time }</p>
+                           <input
+                                type="checkbox"
+                                checked={checked}
+                                onChange={handleCheck}
+                            />
+                           
+                          
+                           
+
                           
                         
                         

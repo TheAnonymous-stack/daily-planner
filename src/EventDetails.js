@@ -18,14 +18,19 @@ const EventDetails = () => {
         })
     };
     return ( 
+        
         <div className="event-details">
+            {/* <EditForm /> */}
             { isPending && <div>Loading...</div> }
             { error && <div>{ error }</div> }
             { event && (
                 <article>
                     <h2>{ event.eventType }</h2>
                     <div>{ event.time }</div>
-                    <div>{ event.eventNote }</div>
+                    
+                    <div>Notes: { event.eventNote }</div>
+                    
+                    
                     <button onClick={handleClick}>Delete Event</button>
                     <button onClick={EditForm}>Edit Event</button>
                 </article>
