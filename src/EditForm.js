@@ -1,16 +1,20 @@
 import { useState } from "react";
 import useFetch from './useFetch';
-import { useHistory, useParams } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import TimePicker from "rc-time-picker";
 import 'rc-time-picker/assets/index.css';
 
-const EditForm = () => {
-    const { id } = useParams();
-    const { data: event  } = useFetch('http://localhost:8000/events/' + id);
+const EditForm = ({ id }) => {
     
-    const [eventType, setEventType] = useState(event.eventType);
-    const [time, setTime] = useState(event.time);
-    const [eventNote, setEventNote] = useState(event.eventNote);
+    // const { id } = useParams();
+    const { data: event  } = useFetch('http://localhost:8000/events/' + id);
+    console.log({id});
+
+    
+    
+    const [eventType, setEventType] = useState('event.eventType');
+    const [time, setTime] = useState('event.time');
+    const [eventNote, setEventNote] = useState('event.eventNote');
     const history = useHistory();
 
     const handleEdit = (e) => {
@@ -47,7 +51,7 @@ const EditForm = () => {
                 <div className="timePicker">
                     
                     <br />
-                    <p>Selected Time: {time || ''}</p>
+                    <p>Selected Time: </p>
                     <TimePicker
                         placeholder="Select Time"
                         use12Hours

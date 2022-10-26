@@ -5,6 +5,9 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Form from './Form';
 import EventDetails from './EventDetails';
 import Checklist from './Checklist';
+import EditForm from './EditForm';
+
+
 
 function App() {
   return (
@@ -21,6 +24,9 @@ function App() {
           </Route>
           <Route path="/add">
             <Form />
+          </Route>
+          <Route path="/edit">
+            <EditForm />
           </Route>
           <Route path="/checklist">
             <Checklist />

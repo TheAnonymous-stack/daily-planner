@@ -1,12 +1,16 @@
 import { useHistory, useParams } from 'react-router-dom';
 import EditForm from './EditForm';
 import useFetch from './useFetch';
+import { Link } from 'react-router-dom';
 
 
 const EventDetails = () => {
     const { id } = useParams();
     const { data: event, error, isPending } = useFetch('http://localhost:8000/events/' + id);
     const history = useHistory();
+    
+    console.log({id});
+   
 
     const handleClick = () => {
         //eslint-disable-next-line
@@ -20,6 +24,7 @@ const EventDetails = () => {
     return ( 
         
         <div className="event-details">
+            
             {/* <EditForm /> */}
             { isPending && <div>Loading...</div> }
             { error && <div>{ error }</div> }
@@ -27,13 +32,15 @@ const EventDetails = () => {
                 <article>
                     <h2>{ event.eventType }</h2>
                     <div>{ event.time }</div>
-                    {event.hasOwnProperty('eventNote') &&
-                    <div>Notes: { event.eventNote }</div>
+                    <hr />
+                    <div> { event.eventNote }</div>
 
-}
+
                     
                     <button onClick={handleClick}>Delete Event</button>
-                    <button onClick={EditForm}>Edit Event</button>
+                <Link to={`/edit`}> 
+                    <button onClick={EditForm} id={id}>Edit Event</button>
+                </Link>
                 </article>
             )}
             

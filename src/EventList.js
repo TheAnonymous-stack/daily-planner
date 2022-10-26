@@ -32,13 +32,6 @@ const EventList = ({ USER_EVENTS }) => {
                         
                            <p>Time: { event.time }</p>
                            
-                           
-                          
-                           
-
-                          
-                        
-                        
                     </Link>               
 
                 </div>
