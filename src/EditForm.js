@@ -1,13 +1,13 @@
 import { useState } from "react";
-import useFetch from './useFetch';
+// import useFetch from './useFetch';
 import { useHistory } from 'react-router-dom';
 import TimePicker from "rc-time-picker";
 import 'rc-time-picker/assets/index.css';
 
 const EditForm = ({ id }) => {
     
-    // const { id } = useParams();
-    const { data: event  } = useFetch('http://localhost:8000/events/' + id);
+    // const { ID } = useParams();
+    // const { data: event  } = useFetch('http://localhost:8000/events/' + ID);
     console.log({id});
 
     

@@ -4,6 +4,7 @@ import useFetch from './useFetch';
 import { Link } from 'react-router-dom';
 
 
+
 const EventDetails = () => {
     const { id } = useParams();
     const { data: event, error, isPending } = useFetch('http://localhost:8000/events/' + id);
@@ -20,6 +21,11 @@ const EventDetails = () => {
         ). then (() => {
             history.push('/checklist');
         })
+    };
+    function sendID () {
+        return(
+            <EditForm id={id} />
+        )
     };
     return ( 
         
@@ -39,7 +45,7 @@ const EventDetails = () => {
                     
                     <button onClick={handleClick}>Delete Event</button>
                 <Link to={`/edit`}> 
-                    <button onClick={EditForm} id={id}>Edit Event</button>
+                    <button onClick={() => sendID()}>Edit Event</button>
                 </Link>
                 </article>
             )}

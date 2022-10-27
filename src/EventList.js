@@ -8,6 +8,7 @@ const EventList = ({ USER_EVENTS }) => {
     };
     
     
+    
 
     return (
         // <input type="checkbox" id="accept" name="accept" value="yes" />  

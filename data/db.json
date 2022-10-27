@@ -11,6 +11,12 @@
       "time": "8:32 AM",
       "eventNote": "",
       "id": 2
+    },
+    {
+      "eventType": "gym",
+      "time": "9:35 AM",
+      "eventNote": "",
+      "id": 3
     }
   ]
 }

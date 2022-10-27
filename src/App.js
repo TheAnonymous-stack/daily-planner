@@ -6,6 +6,7 @@ import Form from './Form';
 import EventDetails from './EventDetails';
 import Checklist from './Checklist';
 import EditForm from './EditForm';
+import Test from './Test';
 
 
 
@@ -30,6 +31,9 @@ function App() {
           </Route>
           <Route path="/checklist">
             <Checklist />
+          </Route>
+          <Route path="/test">
+            <Test />
           </Route>
         </Switch>
       </div>
