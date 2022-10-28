@@ -17,6 +17,18 @@
       "time": "9:35 AM",
       "eventNote": "",
       "id": 3
+    },
+    {
+      "eventType": "school",
+      "time": "8:42 PM",
+      "eventNote": "",
+      "id": 4
+    },
+    {
+      "eventType": "study",
+      "time": "8:42 PM",
+      "eventNote": "",
+      "id": 5
     }
   ]
 }

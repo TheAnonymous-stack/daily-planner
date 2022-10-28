@@ -5,6 +5,8 @@ const Middleman = () => {
     return (
         <div className="middle-man">
             {USER_EVENTS && <Schedule USER_EVENTS={USER_EVENTS} />}
+            
+            
         </div>
         
       );
