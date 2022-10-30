@@ -17,9 +17,6 @@ const Form = () => {
         const task = { eventType, time, eventNote };
         setIsPending(true); 
 
-        // if (eventNote === '') {
-        //     setEventNote('no notes added');
-        // };
 
         fetch('http://localhost:8000/events', {
             method: 'POST',

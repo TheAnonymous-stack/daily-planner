@@ -1,13 +1,13 @@
 {
   "events": [
     {
-      "eventType": "no notes",
+      "eventType": "notes",
       "time": "8:32 AM",
       "eventNote": "",
       "id": 2
     },
     {
-      "eventType": "gym",
+      "eventType": "home",
       "time": "9:35 AM",
       "eventNote": "",
       "id": 3
@@ -23,6 +23,30 @@
       "time": "8:42 PM",
       "eventNote": "",
       "id": 5
+    },
+    {
+      "eventType": "work",
+      "time": "7:11 AM",
+      "eventNote": "",
+      "id": 6
+    },
+    {
+      "eventType": "beer",
+      "time": "7:11 AM",
+      "eventNote": "",
+      "id": 7
+    },
+    {
+      "eventType": "car",
+      "time": "8:11 PM",
+      "eventNote": "",
+      "id": 8
+    },
+    {
+      "eventType": "school",
+      "time": "9:35 AM",
+      "eventNote": "",
+      "id": 9
     }
   ]
 }

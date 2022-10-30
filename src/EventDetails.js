@@ -26,7 +26,7 @@ const EventDetails = () => {
         })
     };
     function EditEvent() {
-        console.log("going to edit");
+        
         history.push("/edit", {ID: id});
     }
    
