@@ -1,7 +1,8 @@
 import { useHistory, useParams } from 'react-router-dom';
-import EditForm from './EditForm';
+// import EditForm from './EditForm';
 import useFetch from './useFetch';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
+
 
 
 
@@ -9,8 +10,10 @@ const EventDetails = () => {
     const { id } = useParams();
     const { data: event, error, isPending } = useFetch('http://localhost:8000/events/' + id);
     const history = useHistory();
+  
+   
     
-    console.log({id});
+   
    
 
     const handleClick = () => {
@@ -22,11 +25,11 @@ const EventDetails = () => {
             history.push('/checklist');
         })
     };
-    function sendID () {
-        return(
-            <EditForm id={id} />
-        )
-    };
+    function EditEvent() {
+        console.log("going to edit");
+        history.push("/edit", {ID: id});
+    }
+   
     return ( 
         
         <div className="event-details">
@@ -44,9 +47,11 @@ const EventDetails = () => {
 
                     
                     <button onClick={handleClick}>Delete Event</button>
-                <Link to={`/edit`}> 
-                    <button onClick={() => sendID()}>Edit Event</button>
-                </Link>
+                    
+                   
+                    <button onClick={EditEvent}>Edit Event</button>
+               
+                
                 </article>
             )}
             

@@ -1,11 +1,13 @@
 import * as React from 'react';
 import { Link } from 'react-router-dom';
+
 const EventList = ({ USER_EVENTS }) => {
 
     const [checked, setChecked] = React.useState(false);
     const handleCheck = () => {
         setChecked(!checked);
     };
+
     
     
     
@@ -28,7 +30,7 @@ const EventList = ({ USER_EVENTS }) => {
                     
                     <Link to={ `/events/${event.id}` }>
                          
-                         
+                          
                            <h2>{ event.eventType }</h2>
                         
                            <p>Time: { event.time }</p>

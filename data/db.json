@@ -1,12 +1,6 @@
 {
   "events": [
     {
-      "eventType": "notes",
-      "time": "3:32 PM",
-      "eventNote": "notes exist",
-      "id": 1
-    },
-    {
       "eventType": "no notes",
       "time": "8:32 AM",
       "eventNote": "",

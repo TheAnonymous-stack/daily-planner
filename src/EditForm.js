@@ -1,80 +1,88 @@
-import { useState } from "react";
-// import useFetch from './useFetch';
-import { useHistory } from 'react-router-dom';
-import TimePicker from "rc-time-picker";
-import 'rc-time-picker/assets/index.css';
+import { useLocation } from "react-router-dom";
+// import { useState } from "react";
+import useFetch from "./useFetch";
+// import TimePicker from "rc-time-picker";
+// import 'rc-time-picker/assets/index.css';
 
-const EditForm = ({ id }) => {
+const EditForm = () => {
+    console.log("loading");
+    const location = useLocation();
+    const ID = location.state.ID;
+    console.log({ID});
+    const { data: event, isPending, error } = useFetch('http://localhost:8000/events/' + ID);
+    console.log({event});
     
-    // const { ID } = useParams();
-    // const { data: event  } = useFetch('http://localhost:8000/events/' + ID);
-    console.log({id});
+    
+    // const history = useHistory();
+    
 
-    
-    
-    const [eventType, setEventType] = useState('event.eventType');
-    const [time, setTime] = useState('event.time');
-    const [eventNote, setEventNote] = useState('event.eventNote');
-    const history = useHistory();
-
-    const handleEdit = (e) => {
-        e.preventDefault();
+    // const handleEdit = (e) => {
+    //     e.preventDefault();
         
-        const task = { eventType, time, eventNote };
-        
+    //     // const task = { eventType, time, eventNote };
+    //     // setIsPending(true); 
 
-        fetch('http://localhost:8000/events', {
-            method: 'POST',
-            headers: {"Content-Type": "application/json" },
-            body: JSON.stringify(task)
+    //     // if (eventNote === '') {
+    //     //     setEventNote('no notes added');
+    //     // };
 
-        }).then(() => {
-            
-            history.push('/checklist');
+    //     fetch('http://localhost:8000/events', {
+    //         method: 'POST',
+    //         headers: {"Content-Type": "application/json" },
+    //         body: JSON.stringify(task)
+
+    //     }).then(() => {
+    //         // setIsPending(false);
+    //         history.push('/checklist');
 
 
-        })
+    //     })
     
-    }
-    
+    // }
     return ( 
         <div className="form">
-            <form onSubmit={handleEdit}>
-                <label>Event Name:</label>
-                <input 
-                    type="text" 
-                    required
-                    value={eventType}
-                    onChange={(e) => setEventType(e.target.value)}
-                />
-                
-                <div className="timePicker">
+           { isPending && <div>Loading...</div> }
+            { error && <div>{ error }</div> }
+            { event && (
+                <form>
+                    <label>Event Name: {event.eventType}</label>
+                    {/* <input 
+                        type="text" 
+                        
+                        value={event.eventType}
+                        onChange={(e) => setEventType(e.target.value)}
+                    /> */}
                     
-                    <br />
-                    <p>Selected Time: </p>
-                    <TimePicker
-                        placeholder="Select Time"
-                        use12Hours
-                        showSecond={false}
-                        focusOnOpen={true}
-                        format="hh:mm A"
-                        onChange={e => setTime(e.format('LT'))}
-                    />
-                </div>
-                <label>Add Notes:</label>
-                <input 
-                    
-                    type="text" 
-                    optional
-                    value={eventNote}
-                    onChange={(e) => setEventNote(e.target.value)}
-                    
-                />
+                    <div className="timePicker">
+                        
+                        <br />
+                        <p>Selected Time: {event.time}</p>
+                        {/* <TimePicker
+                            placeholder="Select Time"
+                            use12Hours
+                            showSecond={false}
+                            focusOnOpen={true}
+                            format="hh:mm A"
+                            onChange={e => setTime(e.format('LT'))}
+                        /> */}
+                    </div>
+                    <label>Add Notes: {event.eventNote}</label>
+                    {/* <input 
+                        placeholder="Add notes, locations, URL,..."
+                        type="text" 
+                        optional
+                        
+                        value={event.eventNote}
+                        onChange={(e) => setEventNote(e.target.value)}
+                        
+                    /> */}
                 
                 
-            </form>
+                    
+                </form>
+            )}
         </div>
-    );
+     );
 }
  
 export default EditForm;

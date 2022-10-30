@@ -37,7 +37,7 @@ const Schedule = ({USER_EVENTS}) => {
             
         };
     }});
-    console.log({TimeTable})
+    // console.log({TimeTable})
 
     
    
