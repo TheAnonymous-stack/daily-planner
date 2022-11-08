@@ -1,12 +1,110 @@
-
-
-
+// import { grid } from "@mui/system";
+import Middleman from "./Middleman";
+import { useLocation } from "react-router-dom";
 
 const Home = () => {
+
+    const receive = useLocation();
+    const TimeTable = receive.state.TimeTable;
+    console.log({TimeTable});
+
+    // const output = document.querySelector('.output');
+    // // const grid = {rows: 25, cols: 2};
+    // // const total = grid.rows * grid.cols;
+
+    
+    // function CreateGrid(tot){
+    //     const ele = document.createElement('div');
+    //     output.appendChild(ele);
+    //     ele.textContent = `Time`;
+    //     ele.classList.add('Timebox');
+    //     ele.textContent = `Events`;
+    //     ele.classList.add('Eventsbox');
+    //     ele.textContent = `12AM`;
+    //     ele.classList.add('12AMbox');
+    //     for(let i = 1;i<tot;i++){
+    //         const element = document.createElement('div');
+    //         output.appendChild(element);
+            
+    //         if (i<12) {
+    //             var TIMEAM = i.toString() + "AM"
+    //             element.textContent = TIMEAM
+    //             element.classList.add( TIMEAM +'box');
+    //         } else {
+    //             var newhour = i - 12
+    //             var TIMEPM = newhour.toString()+'PM'
+    //             element.textContent = TIMEPM
+    //             element.classList.add( TIMEPM +'box');
+    //         };
+            
+
+    //     }
+    // }
+    // console.log(CreateGrid(24));
+   
+    
+
+function grid() {
+    var container = document.createElement('div');
+    
+    container.className = "home";
+    var TIME = document.createElement('div');
+    TIME.className = "Time";
+    TIME.textContent = "Time";
+    container.appendChild(TIME);
+    var EVENTS = document.createElement('div');
+    EVENTS.className = "Events";
+    EVENTS.textContent = "Events";
+    container.appendChild(EVENTS);
+    var TwelveAM = document.createElement('div');
+    TwelveAM.className = "12AM";
+    TwelveAM.textContent = "12AM";
+    container.appendChild(TwelveAM);
+    
+    if (TimeTable[11].length === 1) {
+        var task = document.createElement('div');
+        task.className = 'task12AM'
+        task.textContent = '';
+        container.appendChild(task);
+    } else {
+        var task = document.createElement('div');
+        task.className = 'task12AM'
+        task.textContent = ...TimeTable[11];
+        container.appendChild(task);
+    }
+
+    for (var i = 1; i < 16; i++) {
+        var num = i.toString();
+        var row = document.createElement('div');
+        row.className = "row"+ num;
+        row.textContent = 
+        
+
+        
+
+        container.appendChild(row);
+    }
+
+    return container;
+}
+
+console.log(grid());
+
+    
+  
+    
+
     
 
     return (
-        <div className="home">
+    <div className="bigger-home">
+        <Middleman />
+             
+  
+   
+        
+        {/* <div className="home">
+            
             <div className="item1">Time</div>
             <div className="item2">Events</div>
             <div class="item3">12AM</div>
@@ -60,7 +158,8 @@ const Home = () => {
             
 
 
-        </div>
+        </div> */}
+    </div>
         
       )
 }

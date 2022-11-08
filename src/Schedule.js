@@ -1,6 +1,8 @@
+import { useHistory } from "react-router-dom";
 
 const Schedule = ({USER_EVENTS}) => {
    const TimeTable = [];
+   const history = useHistory();
    var x
    for (let i = 1; i<13; i++) {
     const a = [];
@@ -38,6 +40,8 @@ const Schedule = ({USER_EVENTS}) => {
         };
     }});
     // console.log({TimeTable})
+    history.push('/', {TimeTable: TimeTable});
+   
 
     
    
@@ -46,7 +50,7 @@ const Schedule = ({USER_EVENTS}) => {
   
     
 return (
-   <h1>Schedule</h1>
+   <div></div>
 );
 }
  
