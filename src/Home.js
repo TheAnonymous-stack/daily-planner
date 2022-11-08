@@ -1,12 +1,54 @@
 // import { grid } from "@mui/system";
-import Middleman from "./Middleman";
-import { useLocation } from "react-router-dom";
+// import Middleman from "./Middleman";
+import ContentHome from "./ContentHome";
+import useFetch from "./useFetch";
+
 
 const Home = () => {
+    const { data: USER_EVENTS } = useFetch('http://localhost:8000/events');
+    
+//    const TimeTable = [];
+//    var x
+//    for (let i = 1; i<13; i++) {
+//     const a = [];
+//     let num = i.toString();
+//     let hour = num+'AM';
+//     a.push(hour);
+//     TimeTable.push(a);
+//    };
 
-    const receive = useLocation();
-    const TimeTable = receive.state.TimeTable;
-    console.log({TimeTable});
+//    for (let i = 13; i<25; i++) {
+//     const a = [];
+//     x = i-12
+//     let num = x.toString();
+//     let hour = num+'PM';
+//     a.push(hour);
+//     TimeTable.push(a);
+//    };
+   
+//    USER_EVENTS.map((event) => {
+//     let time = event.time;
+//     const data = time.split(":");
+//     const hour = data[0];
+//     const period = data[1].split(" ")[1];
+//     const combinedTime = hour+period;
+
+ 
+   
+//     for (let y = 0; y<24; y++ ) {
+        
+//         if (combinedTime === TimeTable[y][0]) {
+           
+//             TimeTable[y].push(event);
+//             break
+            
+//         };
+//     }}
+    
+//     );
+//     console.log({TimeTable});
+
+ 
 
     // const output = document.querySelector('.output');
     // // const grid = {rows: 25, cols: 2};
@@ -44,51 +86,57 @@ const Home = () => {
    
     
 
-function grid() {
-    var container = document.createElement('div');
+// function grid() {
+//     var container = document.createElement('div');
     
-    container.className = "home";
-    var TIME = document.createElement('div');
-    TIME.className = "Time";
-    TIME.textContent = "Time";
-    container.appendChild(TIME);
-    var EVENTS = document.createElement('div');
-    EVENTS.className = "Events";
-    EVENTS.textContent = "Events";
-    container.appendChild(EVENTS);
-    var TwelveAM = document.createElement('div');
-    TwelveAM.className = "12AM";
-    TwelveAM.textContent = "12AM";
-    container.appendChild(TwelveAM);
+//     container.className = "home";
+//     var TIME = document.createElement('div');
+//     TIME.className = "Time";
+//     TIME.textContent = "Time";
+//     container.appendChild(TIME);
+//     var EVENTS = document.createElement('div');
+//     EVENTS.className = "Events";
+//     EVENTS.textContent = "Events";
+//     container.appendChild(EVENTS);
+//     var TwelveAM = document.createElement('div');
+//     TwelveAM.className = "12AM";
+//     TwelveAM.textContent = "12AM";
+//     container.appendChild(TwelveAM);
     
-    if (TimeTable[11].length === 1) {
-        var task = document.createElement('div');
-        task.className = 'task12AM'
-        task.textContent = '';
-        container.appendChild(task);
-    } else {
-        var task = document.createElement('div');
-        task.className = 'task12AM'
-        task.textContent = ...TimeTable[11];
-        container.appendChild(task);
-    }
+//     if (TimeTable[11].length === 1) {
+//         var task = document.createElement('div');
+//         task.className = 'task12AM'
+//         task.textContent = '';
+//         container.appendChild(task);
+//     } else {
+        
+//         const newArray = [...TimeTable[11]];
+//         const pop = newArray.shift();
 
-    for (var i = 1; i < 16; i++) {
-        var num = i.toString();
-        var row = document.createElement('div');
-        row.className = "row"+ num;
-        row.textContent = 
+        
+//         var Task = document.createElement('div');
+//         Task.className = 'task12AM'
+//         Task.textContent = newArray;
+//         container.appendChild(Task);
+//         newArray.splice(0,0,pop);
+//     }
+
+//     // for (var i = 1; i < 16; i++) {
+//     //     var num = i.toString();
+//     //     var row = document.createElement('div');
+//     //     row.className = "row"+ num;
+//     //     row.textContent = 
         
 
         
 
-        container.appendChild(row);
-    }
+//     //     container.appendChild(row);
+//     // }
 
-    return container;
-}
+//     return container;
+// }
 
-console.log(grid());
+// console.log(grid());
 
     
   
@@ -98,7 +146,8 @@ console.log(grid());
 
     return (
     <div className="bigger-home">
-        <Middleman />
+        {USER_EVENTS && <ContentHome USER_EVENTS={USER_EVENTS} />}
+        
              
   
    

@@ -39,8 +39,8 @@ const Schedule = ({USER_EVENTS}) => {
             
         };
     }});
-    // console.log({TimeTable})
-    history.push('/', {TimeTable: TimeTable});
+    console.log({TimeTable})
+    history.push("/", {TimeTable: TimeTable});
    
 
     
