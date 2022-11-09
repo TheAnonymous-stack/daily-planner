@@ -1,5 +1,6 @@
 // import { grid } from "@mui/system";
 // import Middleman from "./Middleman";
+
 import ContentHome from "./ContentHome";
 import useFetch from "./useFetch";
 
@@ -68,6 +69,10 @@ const Home = () => {
     return (
     <div className="bigger-home">
         {USER_EVENTS && <ContentHome USER_EVENTS={USER_EVENTS} />}
+        
+        
+         
+        
         
              
   
