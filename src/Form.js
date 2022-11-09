@@ -18,7 +18,7 @@ const Form = () => {
         setIsPending(true); 
 
 
-        fetch('http://localhost:8000/events', {
+        fetch('http://localhost:8000/events/', {
             method: 'POST',
             headers: {"Content-Type": "application/json" },
             body: JSON.stringify(task)

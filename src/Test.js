@@ -3,7 +3,7 @@ import Middleman from "./Middleman";
 import useFetch from "./useFetch";
 
 const Test = () => {
-    const { data: USER_EVENTS } = useFetch('http://localhost:8000/events');
+    const { data: USER_EVENTS } = useFetch('http://localhost:8000/events/');
     console.log({USER_EVENTS});
     return ( 
         <Middleman />

@@ -5,7 +5,7 @@ import useFetch from "./useFetch";
 
 
 const Home = () => {
-    const { data: USER_EVENTS } = useFetch('http://localhost:8000/events');
+    const { data: USER_EVENTS } = useFetch('http://localhost:8000/events/');
 
 // function grid() {
 //     var container = document.createElement('div');
