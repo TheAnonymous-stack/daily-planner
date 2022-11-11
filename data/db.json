@@ -59,6 +59,12 @@
       "time": "12:21 PM",
       "eventNote": "",
       "id": 11
+    },
+    {
+      "eventType": "breakfast ",
+      "time": "10:00 AM",
+      "eventNote": "",
+      "id": 12
     }
   ]
 }
