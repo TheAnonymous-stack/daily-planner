@@ -72,6 +72,29 @@
 }
 
 .home {
+  border: 2px solid black;
+  width: 100%;
+  
+}
+
+.row {
+  
+  background-color: #f1356d;
+  display: flex;
+  
+  
+}
+.hour {
+  
+  width: 20%;
+  border: 2px solid black;
+}
+.task{
+  width: 80%;
+  border: 2px solid black;
+}
+
+/* .home {
   display: grid;
   grid-template-columns: 100px 484px;
   grid-template-rows: auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto;
@@ -85,7 +108,7 @@
   text-align: center;
   padding:20px 0;
   font-size: 30px;
-}
+} */
 
 
 
