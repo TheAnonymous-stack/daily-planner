@@ -1,18 +1,22 @@
-import * as React from 'react';
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 const EventList = ({ USER_EVENTS }) => {
-    const [checked, setChecked] = React.useState(false);
+    const [checked, setChecked] = useState([]);
     const handleCheck = (e) => {
-        // console.log(e.target.id);
-        e.target.setChecked(!checked);
-        // let isChecked = e.target.checked;
+        var updatedList = [...checked];
+        if (e.target.checked) {
+            updatedList = [...checked, e.target.value];
+        } else {
+            updatedList.splice(checked.indexOf(e.target.value),1);
+        }
+        setChecked(updatedList);
+        
     };
     
 
     return (
-        // <input type="checkbox" id="accept" name="accept" value="yes" />  
-        // <label for="accept"> Accept </label>
+        
     <div className="bigger-eventlist">
       
         
@@ -23,11 +27,9 @@ const EventList = ({ USER_EVENTS }) => {
                 
                 <div className="event-preview" key={event.id}>
                     
-                    <input
-                type="checkbox"
-                id={event.id}
-                checked=""
-                onChange={e => handleCheck(e)}
+                    <input value={event} 
+                    type="checkbox"
+                    onChange={handleCheck}
                 
             />
                     
