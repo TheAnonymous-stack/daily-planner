@@ -3,19 +3,19 @@ import { Link } from 'react-router-dom';
 
 const EventList = ({ USER_EVENTS }) => {
     const [checked, setChecked] = React.useState(false);
-    const handleCheck = () => {
-        setChecked(!checked);
+    const handleCheck = (e) => {
+        // console.log(e.target.id);
+        e.target.setChecked(!checked);
+        // let isChecked = e.target.checked;
     };
+    
 
     return (
         // <input type="checkbox" id="accept" name="accept" value="yes" />  
         // <label for="accept"> Accept </label>
     <div className="bigger-eventlist">
-        <input
-                type="checkbox"
-                checked={checked}
-                onChange={handleCheck}
-            />
+      
+        
         <div className="event-list">
             
             
@@ -23,7 +23,13 @@ const EventList = ({ USER_EVENTS }) => {
                 
                 <div className="event-preview" key={event.id}>
                     
-                    
+                    <input
+                type="checkbox"
+                id={event.id}
+                checked=""
+                onChange={e => handleCheck(e)}
+                
+            />
                     
                     <Link to={ `/events/${event.id}` }>
                          

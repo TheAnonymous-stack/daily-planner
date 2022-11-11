@@ -41,164 +41,185 @@ const ContentHome = ({USER_EVENTS}) => {
     }}
     
     );
+    for (let i in TimeTable) {
+       
+        if(TimeTable[i].length === 1) {
+            TimeTable[i].push('')
+        } else {
+            var array = [];
+            var pop = TimeTable[i].shift();
+            array = [...TimeTable[i]];
+            var statement = ''
+            for (let y in array) {
+                var todo = array[y].eventType;
+                var time = array[y].time;
+                statement += todo+" @ "+time+" "
+                
+            }
+            TimeTable[i]=[];
+            TimeTable[i].push(statement)
+            TimeTable[i].splice(0,0,pop);
+
+        }
+    }
     console.log({TimeTable});
 
-    const Table = [];
+    // const Table = [];
 
-    function Grid() {
+    // function Grid() {
             
         
             
-            // var container = document.createElement('div');
+    //         // var container = document.createElement('div');
             
-            // container.className = "home";
-            var TIME = document.createElement('div');
-            TIME.className = "Time";
-            TIME.textContent = "Time";
+    //         // container.className = "home";
+    //         var TIME = document.createElement('div');
+    //         TIME.className = "Time";
+    //         TIME.textContent = "Time";
             
-            Table.push(TIME);
+    //         Table.push(TIME);
             
             
     
-            var EVENTS = document.createElement('div');
-            EVENTS.className = "Events";
-            EVENTS.textContent = "Events";
+    //         var EVENTS = document.createElement('div');
+    //         EVENTS.className = "Events";
+    //         EVENTS.textContent = "Events";
             
-            Table.push(EVENTS);
-            var TwelveAM = document.createElement('div');
-            TwelveAM.className = "12AM";
-            TwelveAM.textContent = "12AM";
+    //         Table.push(EVENTS);
+    //         var TwelveAM = document.createElement('div');
+    //         TwelveAM.className = "12AM";
+    //         TwelveAM.textContent = "12AM";
             
-            Table.push(TwelveAM);
+    //         Table.push(TwelveAM);
                 
-            if (TimeTable[11].length === 1) {
-                var task = document.createElement('div');
-                task.className = 'task12AM'
-                task.textContent = '';
-                Table.push(task);
-            } else {
-                var statement = "";
-                const newArray = [...TimeTable[11]];
-                const pop = newArray.shift();
-                var Task = document.createElement('div');
-                Task.className = 'task12AM'
+    //         if (TimeTable[11].length === 1) {
+    //             var task = document.createElement('div');
+    //             task.className = 'task12AM'
+    //             task.textContent = '';
+    //             Table.push(task);
+    //         } else {
+    //             var statement = "";
+    //             const newArray = [...TimeTable[11]];
+    //             const pop = newArray.shift();
+    //             var Task = document.createElement('div');
+    //             Task.className = 'task12AM'
                 
-                for (let x in newArray) {
-                    var event = newArray[x].eventType;
-                    var time = newArray[x].time;
-                    var todo = event+" @ "+time+" ";
-                    statement += todo;
+    //             for (let x in newArray) {
+    //                 var event = newArray[x].eventType;
+    //                 var time = newArray[x].time;
+    //                 var todo = event+" @ "+time+" ";
+    //                 statement += todo;
                     
-                }
-                Task.textContent = statement;
+    //             }
+    //             Task.textContent = statement;
                 
-                Table.push(Task);
-                newArray.splice(0,0,pop);
-            };
+    //             Table.push(Task);
+    //             newArray.splice(0,0,pop);
+    //         };
         
-            for (var i = 1; i < 24; i++) {
-                if (i < 12){
-                    var num = i.toString();
-                    var AM = document.createElement('div');
-                    AM.className = num+"AM";
-                    AM.textContent = num+"AM";
-                    Table.push(AM);
-                    var taskAM = document.createElement('div');
-                    taskAM.className = "task"+num+"AM";
-                    if (TimeTable[i-1].length === 1){
-                        taskAM.textContent = "";
-                        Table.push(taskAM);
-                    } else {
-                        var Statement = "";
-                        const NewArray = [...TimeTable[i-1]];
-                        const Pop = NewArray.shift();
-                        for (let y in NewArray) {
-                            var Event = NewArray[y].eventType;
-                            var Time = NewArray[y].time;
-                            var Todo = Event+" @ "+Time+" ";
-                            Statement += Todo;
+    //         for (var i = 1; i < 24; i++) {
+    //             if (i < 12){
+    //                 var num = i.toString();
+    //                 var AM = document.createElement('div');
+    //                 AM.className = num+"AM";
+    //                 AM.textContent = num+"AM";
+    //                 Table.push(AM);
+    //                 var taskAM = document.createElement('div');
+    //                 taskAM.className = "task"+num+"AM";
+    //                 if (TimeTable[i-1].length === 1){
+    //                     taskAM.textContent = "";
+    //                     Table.push(taskAM);
+    //                 } else {
+    //                     var Statement = "";
+    //                     const NewArray = [...TimeTable[i-1]];
+    //                     const Pop = NewArray.shift();
+    //                     for (let y in NewArray) {
+    //                         var Event = NewArray[y].eventType;
+    //                         var Time = NewArray[y].time;
+    //                         var Todo = Event+" @ "+Time+" ";
+    //                         Statement += Todo;
                             
-                        }
-                        // console.log({NewArray});
+    //                     }
+    //                     // console.log({NewArray});
                         
-                        taskAM.textContent = Statement;
-                        // taskAM.textContent = NewArray;
-                        Table.push(taskAM);
-                        NewArray.splice(0,0,Pop);
-                    };
+    //                     taskAM.textContent = Statement;
+    //                     // taskAM.textContent = NewArray;
+    //                     Table.push(taskAM);
+    //                     NewArray.splice(0,0,Pop);
+    //                 };
                     
 
-                } else if (i === 12) {
-                    var stringtime = i.toString();
-                    var mid = document.createElement('div');
-                    mid.className = stringtime+"PM";
-                    mid.textContent = stringtime+"PM";
-                    Table.push(mid);
-                    var task12PM = document.createElement('div');
-                    task12PM.className = "task"+stringtime+"PM";
-                    if (TimeTable[23] === 1) {
-                        task12PM.textContent = "";
-                        Table.push(task12PM);
-                    } else {
-                        var StateMent = "";
-                        const NewList = [...TimeTable[23]];
-                        const shift = NewList.shift();
-                        for (let z in NewList) {
-                            var EVent = NewList[z].eventType;
-                            var TIme = NewList[z].time;
-                            var ToDo = EVent+" @ "+TIme+" ";
-                            StateMent += ToDo;
-                    }
-                        task12PM.textContent = StateMent;
+    //             } else if (i === 12) {
+    //                 var stringtime = i.toString();
+    //                 var mid = document.createElement('div');
+    //                 mid.className = stringtime+"PM";
+    //                 mid.textContent = stringtime+"PM";
+    //                 Table.push(mid);
+    //                 var task12PM = document.createElement('div');
+    //                 task12PM.className = "task"+stringtime+"PM";
+    //                 if (TimeTable[23] === 1) {
+    //                     task12PM.textContent = "";
+    //                     Table.push(task12PM);
+    //                 } else {
+    //                     var StateMent = "";
+    //                     const NewList = [...TimeTable[23]];
+    //                     const shift = NewList.shift();
+    //                     for (let z in NewList) {
+    //                         var EVent = NewList[z].eventType;
+    //                         var TIme = NewList[z].time;
+    //                         var ToDo = EVent+" @ "+TIme+" ";
+    //                         StateMent += ToDo;
+    //                 }
+    //                     task12PM.textContent = StateMent;
                         
-                        Table.push(task12PM);
-                        NewList.splice(0,0,shift);
-                    }
+    //                     Table.push(task12PM);
+    //                     NewList.splice(0,0,shift);
+    //                 }
                     
 
-                }
-                 else if (i > 12){
-                    var newhour = i - 12;
+    //             }
+    //              else if (i > 12){
+    //                 var newhour = i - 12;
                     
-                    var Newhour = newhour.toString();
-                    var PM = document.createElement('div');
-                    PM.className = Newhour+"PM";
-                    PM.textContent = Newhour+"PM";
-                    Table.push(PM);
-                    var taskPM = document.createElement('div');
-                    taskPM.className = "task"+Newhour+"PM";
+    //                 var Newhour = newhour.toString();
+    //                 var PM = document.createElement('div');
+    //                 PM.className = Newhour+"PM";
+    //                 PM.textContent = Newhour+"PM";
+    //                 Table.push(PM);
+    //                 var taskPM = document.createElement('div');
+    //                 taskPM.className = "task"+Newhour+"PM";
 
                   
-                    if (TimeTable[i-1].length === 1){
-                        taskPM.textContent = "";
-                        Table.push(taskPM);
-                    } else {
-                        var stateMent = "";
-                        const NewList = [...TimeTable[i-1]];
-                        const shift = NewList.shift();
-                        for (let z in NewList) {
-                            var eVent = NewList[z].eventType;
-                            var tIme = NewList[z].time;
-                            var toDo = eVent+" @ "+tIme+" ";
-                            stateMent += toDo;
+    //                 if (TimeTable[i-1].length === 1){
+    //                     taskPM.textContent = "";
+    //                     Table.push(taskPM);
+    //                 } else {
+    //                     var stateMent = "";
+    //                     const NewList = [...TimeTable[i-1]];
+    //                     const shift = NewList.shift();
+    //                     for (let z in NewList) {
+    //                         var eVent = NewList[z].eventType;
+    //                         var tIme = NewList[z].time;
+    //                         var toDo = eVent+" @ "+tIme+" ";
+    //                         stateMent += toDo;
                             
-                        }
+    //                     }
                         
-                        taskPM.textContent = stateMent;
-                        // taskPM.textContent = NewList;
-                        Table.push(taskPM);
-                        NewList.splice(0,0,shift);
-                    };
+    //                     taskPM.textContent = stateMent;
+    //                     // taskPM.textContent = NewList;
+    //                     Table.push(taskPM);
+    //                     NewList.splice(0,0,shift);
+    //                 };
 
 
-                }
-            }
+    //             }
+    //         }
        
 
-            // return Table;
+    //         // return Table;
             
-        }
-        Grid();
+    //     }
+    //     Grid();
     
         
     //    console.log(grid());
@@ -266,7 +287,7 @@ const ContentHome = ({USER_EVENTS}) => {
   
       
     
-    const names = [["1AM",''], ['2AM','work at 2AM']];
+    // const names = [["1AM",''], ['2AM','work at 2AM']];
 
     return (
         <div className="content-home">
@@ -277,7 +298,7 @@ const ContentHome = ({USER_EVENTS}) => {
                 </div>
             {
                 
-                names.map((ele) => {
+                TimeTable.map((ele) => {
                     return (
                     <div class="row">
                     <div class="hour">{ele[0]}</div>
