@@ -62,6 +62,14 @@ const ContentHome = ({USER_EVENTS}) => {
 
         }
     }
+    var GetElement = TimeTable[11];
+    TimeTable.splice(11,1);
+    TimeTable.splice(0,0,GetElement);
+
+    var TakeElement = TimeTable[23];
+    TimeTable.splice(23,1);
+    TimeTable.splice(12,0,TakeElement);
+
     console.log({TimeTable});
 
     // const Table = [];

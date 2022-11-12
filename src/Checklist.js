@@ -14,6 +14,7 @@ const Checklist = () => {
             {USER_EVENTS && <EventList USER_EVENTS={USER_EVENTS} title="Schedule" />}
             
             
+            
 
             
         </div>
