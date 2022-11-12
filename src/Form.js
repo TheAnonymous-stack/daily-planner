@@ -9,12 +9,13 @@ const Form = () => {
     const [eventNote, setEventNote] = useState('');
     const [time, setTime] = useState('');
     const [isPending, setIsPending] = useState(false);
+    var isChecked = false;
     const history = useHistory();
 
     const handleSubmit = (e) => {
         e.preventDefault();
         
-        const task = { eventType, time, eventNote };
+        const task = { eventType, time, eventNote, isChecked };
         setIsPending(true); 
 
 

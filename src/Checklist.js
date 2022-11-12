@@ -1,6 +1,4 @@
 import EventList from "./EventList";
-
-
 import useFetch from './useFetch';
 
 
@@ -12,6 +10,7 @@ const Checklist = () => {
             { error && <div>{ error }</div>}
             { isPending && <div>Loading...</div> }
             {USER_EVENTS && <EventList USER_EVENTS={USER_EVENTS} title="Schedule" />}
+            
             
             
 
