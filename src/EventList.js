@@ -1,80 +1,8 @@
-// import { useEffect } from 'react';
-// import { useState } from 'react';
+
 import React from 'react';
 import { Link } from 'react-router-dom';
 
 const EventList = ({ USER_EVENTS }) => {
-
-   
-    // const [checked, setChecked] = useState([]);
-    
-    // const handleCheck = (e) => {
-        
-    //     var updatedList = [...checked];
-    //     console.log({updatedList});
-    //     if (e.target.checked) {
-    //         updatedList = [...checked, e.target.value];
-    //     } else {
-    //         updatedList.splice(checked.indexOf(e.target.value),1);
-    //     }
-    //     setChecked(updatedList);
-    //     console.log({checked});
-        
-    // };
-    // function handleCheckall() {
-    //     checked = [];
-    //     // var UpdatedList = [];
-    //     // USER_EVENTS.map(e => {
-    //     //     var ele = e.toString();
-    //     //     UpdatedList.push(ele)
-    //     // })
-    //     // setChecked(UpdatedList);
-    // }
-    // function handleCheckall() {
-    //     const TABLE = [];
-    //     USER_EVENTS.map(ev => {
-    //         var a = [];
-    //         a.push(ev);
-    //         TABLE.push(`${a}`);
-    //     })
-    //     setChecked(TABLE);
-    //     console.log({checked});
-    // }
-    // function handleCheckall() {
-    //     var UpdatedList = [...checked,USER_EVENTS];
-    //     setChecked(UpdatedList);
-    //     console.log({UpdatedList});
-            
-    //     }
-
-
-    
-    
-        
-    // }
-    // const [isCheckAll, setIsCheckAll] = useState(false);
-    // const [isCheck, setIsCheck] = useState([]);
-    // const [list, setList] = useState()
-
-    // useEffect(() => {
-    //     setList(USER_EVENTS);
-    // },[USER_EVENTS]);
-
-    // const handleCheckall = e => {
-    //     setIsCheckAll(!isCheckAll);
-    //     setIsCheck(list.map(li => li.id));
-    //     if (isCheckAll) {
-    //         setIsCheck([])
-    //     }
-    // };
-
-    // const handleCheck = e => {
-    //     const { id, checked } = e.target;
-    //     setIsCheck([...isCheck, id]);
-    //     if (!checked) {
-    //         setIsCheck(isCheck.filter(item => item !== id));
-    //     }
-    // };
     function handleDeleteAll() {
         USER_EVENTS.map((e) => {
             fetch('http://localhost:8000/events/'+e.id , {

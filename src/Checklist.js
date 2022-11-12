@@ -1,6 +1,4 @@
 import EventList from "./EventList";
-
-
 import useFetch from './useFetch';
 
 
