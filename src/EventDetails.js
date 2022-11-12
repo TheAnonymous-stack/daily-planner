@@ -40,8 +40,6 @@ const EventDetails = () => {
                     <hr />
                     <div> { event.eventNote }</div>
 
-
-                    
                     <button onClick={handleClick}>Delete Event</button>
                     
                    

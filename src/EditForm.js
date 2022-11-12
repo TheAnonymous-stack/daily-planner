@@ -9,14 +9,9 @@ const EditForm = () => {
     const location = useLocation();
     const ID = location.state.ID;
     
-    
     const { data: event } = useFetch('http://localhost:8000/events/' + ID);
     const { data: USER_EVENTS} = useFetch('http://localhost:8000/events/');
     
-    
-    
-    
-
     return ( 
         <div className="editform">
             
