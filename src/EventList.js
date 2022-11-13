@@ -2,6 +2,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+
+
 const EventList = ({ USER_EVENTS }) => {
     function handleDeleteAll() {
         USER_EVENTS.map((e) => {
@@ -45,7 +47,7 @@ const EventList = ({ USER_EVENTS }) => {
     return (
         
     <div className="bigger-eventlist">
-        
+    
         <h1><u>CHECKLIST</u></h1>
         
         

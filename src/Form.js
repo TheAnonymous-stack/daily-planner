@@ -57,6 +57,7 @@ const Form = () => {
                         format="hh:mm A"
                         onChange={e => setTime(e.format('LT'))}
                     />
+                    
                    
                 </div>
                 <div className="event-note">
