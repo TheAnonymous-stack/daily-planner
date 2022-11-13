@@ -10,12 +10,13 @@
   padding: 20px;
   display: flex;
   align-items: center;
-  max-width: 600px;
+  max-width: 80%;
   margin: 0 auto;
   border-bottom: 1px solid #f2f2f2;
 }
 .navbar h1 {
-  color: #f1356d;
+  color: #EB6440;
+ 
 }
 .navbar .links {
   margin-left: auto;
@@ -26,12 +27,12 @@
   padding: 6px;
 }
 .navbar a:hover {
-  color: #f1356d;
+  color: #EB6440;
 }
 .content {
-  max-width: 600px;
-  margin: 40px auto;
-  padding: 20px;
+  max-width: 80%;
+  margin: auto auto;
+  padding: 5%;
   font-size: 25px;
 }
 
@@ -39,8 +40,9 @@
   max-width: 400px;
   margin: 0 auto;
   text-align: center;
-  background-color: lightgreen;
-  padding: 50px;
+  background-color:#E9EAE0;
+  border-style: solid;
+  padding: 40px;
   
 }
 
@@ -51,6 +53,7 @@
 .timePicker {
   text-align: left;
   display: block;
+  margin-bottom: 6%;
 }
 
 .form input {
@@ -63,13 +66,28 @@
 }
 
 .form button {
-  background: #f1356d;
+  background: #EB6440;
   color: #fff;
   border: 0;
   padding: 8px;
   border-radius: 8px;
   cursor: pointer;
 }
+
+.event-title {
+  margin-bottom: 7%;
+}
+
+.event-title input {
+  border: 1px solid black;
+  padding: 1%;
+}
+
+.event-note input {
+  border: 1px solid black;
+  padding: 1%;
+}
+
 
 .home {
   border: 2px solid black;
@@ -79,76 +97,131 @@
 
 .row {
   
-  background-color: #f1356d;
+  background: #EB6440;
   display: flex;
   
+
+}
+
+.row2 {
+  
+  background: whitesmoke;
+  display: flex;
   
 }
 .hour {
   
   width: 20%;
+  padding-bottom: 1%;
+  padding-top: 1%;
   border: 2px solid black;
+  color: white;
+  
 }
 .task{
   width: 80%;
   border: 2px solid black;
+  padding-bottom: 1%;
+  padding-top: 1%;
+  color: white;
+  
 }
-
-/* .home {
-  display: grid;
-  grid-template-columns: 100px 484px;
-  grid-template-rows: auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto;
-  gap: 5px;
-  background-color: #2196F3;
-  padding: 5px;
+.hour2 {
+  
+  width: 20%;
+  border: 2px solid black;
+  padding-bottom: 1%;
+  padding-top: 1%;
+  
 }
-
-.home > div {
-  background-color: rgba(255, 255, 255, 0.8);
-  text-align: center;
-  padding:20px 0;
-  font-size: 30px;
-} */
-
-
-
-
-
-.event_preview {
-  padding: 10px 16px;
-  margin: 20px 0;
+.task2 {
+  width: 80%;
+  border: 2px solid black;
+  padding-bottom: 1%;
+  padding-top: 1%;
+  
+}
+.bigger-eventlist h1 {
+  padding-bottom: 2%;
+}
+.event-list {
+  margin-left: 37%;
+  
+  text-align: left;
+  padding-bottom: 5%;
+  
+}
+.event-preview {
+  padding-bottom: 3%;
   border-bottom: 1px solid #fafafa;
+  
+ 
+  
 }
 
 .event-preview:hover {
   box-shadow: 1px 3px 5px rgba(0,0,0,0.1);
 }
 
-.event-preview h2 {
-  font-size: 30px;
-  color: #f1356d;
-  margin-bottom: 8px;
-  
-}
+
 .event-preview a{
   text-decoration: none;
 }
 
-.event-details h2 {
-  font-size: 40px;
-  color: #f1356d;
-  margin-bottom: 10px;
+.event-preview p {
+  
+  margin-left: 5%;
 }
+
+
+
 .event-details div {
   margin: 20px 0;
 }
+
+.event-details h2 {
+  font-style: italic;
+  color: #EB6440;
+}
 .event-details button {
-  background: #f1356d;
+  background: #EB6440;
   color: #fff;
   border: 0;
   padding: 8px;
   border-radius: 8px;
   cursor: pointer;
+}
+
+
+.checkbox input {
+  transform: scale(2);
+}
+
+.checkbox span {
+  font-style: italic;
+  
+  font-size: 40px;
+  color: #EB6440;
+  margin-bottom: 10px;
+  padding-left: 2%;
+}
+
+.add-ons {
+  padding: 0%;
+  
+}
+.add-ons button {
+  
+  background: #EB6440;
+  color: #fff;
+  border: 0;
+  padding: 8px;
+  padding-left: 12px;
+  padding-right: 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-left: 2%;
+  margin-right: 2%;
 }
 
 

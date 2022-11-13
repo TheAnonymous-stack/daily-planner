@@ -71,19 +71,19 @@ const ContentHome = ({USER_EVENTS}) => {
     TimeTable.splice(12,0,TakeElement);
 
     return (
-        <div className="content-home">
+        <div class="content-home">
             <div className="home">
                 <div class="row">
-                    <div class="hour">Time</div>
-                    <div class="task">Events</div>
+                    <div class="hour">TIME</div>
+                    <div class="task">EVENTS</div>
                 </div>
             {
                 
                 TimeTable.map((ele) => {
                     return (
-                    <div class="row">
-                    <div class="hour">{ele[0]}</div>
-                    <div class="task">{ele[1]}</div>
+                    <div class="row2">
+                    <div class="hour2">{ele[0]}</div>
+                    <div class="task2">{ele[1]}</div>
                     </div> 
                     )
                  

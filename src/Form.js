@@ -36,18 +36,19 @@ const Form = () => {
         <div className="form">
            
             <form onSubmit={handleSubmit}>
-                <label>Event Name:</label>
+                <div className="event-title">
+                <label>Event Name: {eventType || ''}</label>
                 <input 
                     type="text" 
                     required
                     value={eventType}
                     onChange={(e) => setEventType(e.target.value)}
                 />
-                
+                </div>
                 <div className="timePicker">
                     
-                    <br />
                     <p>Selected Time: {time || ''}</p>
+                    
                     <TimePicker
                         placeholder="Select Time"
                         use12Hours
@@ -56,8 +57,11 @@ const Form = () => {
                         format="hh:mm A"
                         onChange={e => setTime(e.format('LT'))}
                     />
+                    
+                   
                 </div>
-                <label>Add Notes:</label>
+                <div className="event-note">
+                <label>Add Notes: {eventNote || ''}</label>
                 <input 
                     placeholder="Add notes, locations, URL,..."
                     type="text" 
@@ -67,6 +71,8 @@ const Form = () => {
                     onChange={(e) => setEventNote(e.target.value)}
                     
                 />
+                </div>
+                <br />
                
                 { !isPending && <button>Add Event</button> }
                 { isPending && <button>Adding Event...</button> }

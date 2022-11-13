@@ -2,6 +2,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+
+
 const EventList = ({ USER_EVENTS }) => {
     function handleDeleteAll() {
         USER_EVENTS.map((e) => {
@@ -45,13 +47,9 @@ const EventList = ({ USER_EVENTS }) => {
     return (
         
     <div className="bigger-eventlist">
-        <div className="add-ons">
-            <button onClick={handleDeleteChecked}>Delete all checked item</button>
-            <button onClick ={handleDeleteAll}>Delete all items</button>
-            <button onClick={handleCheckall}>Check all item</button>
-        </div>
+    
+        <h1><u>CHECKLIST</u></h1>
         
-      
         
         <div className="event-list">
             
@@ -59,10 +57,11 @@ const EventList = ({ USER_EVENTS }) => {
             {USER_EVENTS.map((event) => (
                 
                 <div className="event-preview" key={event.id}>
-                    
+                    <div className="checkbox">
                     <input 
                     value={event} 
                     type="checkbox"
+                    
                     onChange={() => {
                         const isChecked = !event.isChecked;
                         const eventType = event.eventType;
@@ -84,20 +83,29 @@ const EventList = ({ USER_EVENTS }) => {
                     
                 
             />
+            <Link to={ `/events/${event.id}` }>
+                <span>{event.eventType}</span>
+            </Link>
+            </div>
                     
                     <Link to={ `/events/${event.id}` }>
-                         
-                          
-                           <h2>{ event.eventType }</h2>
-                        
-                           <p>Time: { event.time }</p>
+                            
+                                <p>Time: { event.time }</p>
                            
-                    </Link>               
+                    </Link>  
+
+                                
 
                 </div>
  
             ))}
+            
         </div>
+        <div class="add-ons">
+                <button onClick={handleCheckall}>Check All Events</button>
+                <button onClick={handleDeleteChecked}>Delete All Checked Events</button>
+                <button onClick={handleDeleteAll}>Delete All Events</button>
+            </div>
         </div>
     
       );
