@@ -75,7 +75,7 @@ const Form = () => {
                 <br />
                
                 { !isPending && <button class="Button">Add Event</button> }
-                { isPending && <button>Adding Event...</button> }
+                { isPending && <button class="Button">Adding Event...</button> }
                 
             </form>
         </div>
