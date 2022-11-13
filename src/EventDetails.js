@@ -40,10 +40,10 @@ const EventDetails = () => {
                     <hr />
                     <div> { event.eventNote }</div>
 
-                    <button onClick={handleClick}>Delete Event</button>
+                    <button class="Button2" onClick={handleClick}>Delete Event</button>
                     
                    
-                    <button onClick={EditEvent}>Edit Event</button>
+                    <button class="Button2" onClick={EditEvent}>Edit Event</button>
                
                 
                 </article>

@@ -1,20 +1,46 @@
 
 import React from 'react';
+
 import { Link } from 'react-router-dom';
 
 
 
 const EventList = ({ USER_EVENTS }) => {
+    function timeout(delay) {
+        return new Promise( res => setTimeout(res, delay) );
+    };
+    
+    const deleteallrequests = async(e) => {
+        await fetch('https://personal-schedule-db.herokuapp.com/events/'+e.id , {
+            method: 'DELETE'
+        }). then (
+            await timeout(300)
+        )
+        window.location.reload(false);
+    };
     function handleDeleteAll() {
         USER_EVENTS.map((e) => {
-            fetch('https://personal-schedule-db.herokuapp.com/events/'+e.id , {
-            method: 'DELETE'
-        })
+            deleteallrequests(e)
         
         })
-        window.location.reload(false);
+       
         
     };
+    
+    
+   const checkallrequest = async(update, event) => {
+    await fetch('https://personal-schedule-db.herokuapp.com/events/'+ event.id, {
+        method: 'PUT',
+        headers: {"Content-Type": "application/json" },
+        body: JSON.stringify(update)
+
+        }).then(
+           await timeout(300)
+            
+        )
+        window.location.reload(false);
+        
+   };
    function handleCheckall() {
     USER_EVENTS.map((event) => {
         const isChecked = true;
@@ -24,25 +50,44 @@ const EventList = ({ USER_EVENTS }) => {
                         
         const update = { eventType, time, eventNote, isChecked };
         
-        fetch('https://personal-schedule-db.herokuapp.com/events/'+ event.id, {
-            method: 'PUT',
-            headers: {"Content-Type": "application/json" },
-            body: JSON.stringify(update)
-
-            });
-            window.location.reload(false);
+       checkallrequest(update, event);
+            
+            
     })
+   };
+   const deleteallcheckedrequest = async(event) => {
+    await fetch('https://personal-schedule-db.herokuapp.com/events/'+ event.id, {
+                method: 'DELETE'
+   }).then(
+           await timeout(300)
+            
+        )
+        window.location.reload(false);
+        
    };
    function handleDeleteChecked() {
     USER_EVENTS.map((event) => {
         if (event.isChecked === true) {
-            fetch('https://personal-schedule-db.herokuapp.com/events/'+ event.id, {
-            method: 'DELETE'
-        })
+            deleteallcheckedrequest(event);
         }
     })
+    
+   };
+   const checkrequest = async(update, event) => {
+    await fetch('https://personal-schedule-db.herokuapp.com/events/'+ event.id, {
+        method: 'PUT',
+        headers: {"Content-Type": "application/json" },
+        body: JSON.stringify(update)
+
+    }).then (
+        await timeout(100)
+    );
     window.location.reload(false);
    };
+   
+
+   
+   
     
     return (
         
@@ -69,14 +114,8 @@ const EventList = ({ USER_EVENTS }) => {
                         const eventNote = event.eventNote;
                         
                         const update = { eventType, time, eventNote, isChecked };
-                        console.log({update});
-                        fetch('https://personal-schedule-db.herokuapp.com/events/'+ event.id, {
-                            method: 'PUT',
-                            headers: {"Content-Type": "application/json" },
-                            body: JSON.stringify(update)
-
-                        });
-                        window.location.reload(false);
+                        
+                        checkrequest(update,event);
                     }}
                     checked={event.isChecked}
                     

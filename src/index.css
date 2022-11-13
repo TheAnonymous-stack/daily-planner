@@ -65,14 +65,29 @@
   display: block;
 }
 
-.form button {
+.Button {
   background: #EB6440;
+  font-size: 20px;
+  color: #fff;
+  border: 0;
+  padding: 8px;
+  
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.Button2 {
+  background: #EB6440;
+  font-size: 20px;
   color: #fff;
   border: 0;
   padding: 8px;
   border-radius: 8px;
   cursor: pointer;
+  margin-right: 5%;
+  
 }
+
 
 .event-title {
   margin-bottom: 7%;

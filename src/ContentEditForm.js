@@ -42,17 +42,20 @@ const ContentEditForm = ({event, id}) => {
         <div className="form">
            
                 <form onSubmit={handleEdit}>
+                <div className="event-title">
                     <label>Event Name: </label>
+                    
                     <input 
                         type="text" 
                         optional
                         value={eventType}
                         onChange={(e) => setEventType(e.target.value)}
                     />
+                    </div>
                     
                     <div className="timePicker">
                         
-                        <br />
+                        
                         <p>Selected Time: </p>
                         <TimePicker
                             // placeholder="Select Time"
@@ -64,6 +67,7 @@ const ContentEditForm = ({event, id}) => {
                             onChange={e => setTime(e.format('LT'))}
                         />
                     </div>
+                    <div className="event-note">
                     <label>Add Notes: </label>
                     <input 
                         placeholder="Add notes, locations, URL,..."
@@ -74,9 +78,11 @@ const ContentEditForm = ({event, id}) => {
                         onChange={(e) => setEventNote(e.target.value)}
                         
                     />
+                    </div>
+                    <br />
                 
-                { !isPending && <button>Confirm</button> }
-                <button onClick={handleCancel}>Cancel</button>
+                { !isPending && <button class="Button2">Confirm</button> }
+                <button class="Button2" onClick={handleCancel}>Cancel</button>
                     
                 </form>
             
