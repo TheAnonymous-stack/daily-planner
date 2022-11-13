@@ -3,7 +3,7 @@ import useFetch from './useFetch';
 
 
 const Checklist = () => {
-    const { data: USER_EVENTS, isPending, error } = useFetch('http://localhost:8000/events/');
+    const { data: USER_EVENTS, isPending, error } = useFetch('https://personal-schedule-db.herokuapp.com/events');
    
     return (
         <div className="checklist">

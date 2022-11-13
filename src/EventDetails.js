@@ -5,13 +5,13 @@ import useFetch from './useFetch';
 
 const EventDetails = () => {
     const { id } = useParams();
-    const { data: event, error, isPending } = useFetch('http://localhost:8000/events/' + id);
+    const { data: event, error, isPending } = useFetch('https://personal-schedule-db.herokuapp.com/events/' + id);
     const history = useHistory();
     
 
     const handleClick = () => {
         //eslint-disable-next-line
-        fetch('http://localhost:8000/events/'+ event.id, {
+        fetch('https://personal-schedule-db.herokuapp.com/events/'+ event.id, {
             method: 'DELETE'
         } 
         ). then (() => {

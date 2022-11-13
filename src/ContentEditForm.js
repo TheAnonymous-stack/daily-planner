@@ -25,7 +25,7 @@ const ContentEditForm = ({event, id}) => {
 
        
 
-        fetch('http://localhost:8000/events/'+ id, {
+        fetch('https://personal-schedule-db.herokuapp.com/events/'+ id, {
             method: 'PUT',
             headers: {"Content-Type": "application/json" },
             body: JSON.stringify(task)

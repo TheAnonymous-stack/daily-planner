@@ -19,7 +19,7 @@ const Form = () => {
         setIsPending(true); 
 
 
-        fetch('http://localhost:8000/events/', {
+        fetch('https://personal-schedule-db.herokuapp.com/events', {
             method: 'POST',
             headers: {"Content-Type": "application/json" },
             body: JSON.stringify(task)

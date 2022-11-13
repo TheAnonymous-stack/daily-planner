@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 const EventList = ({ USER_EVENTS }) => {
     function handleDeleteAll() {
         USER_EVENTS.map((e) => {
-            fetch('http://localhost:8000/events/'+e.id , {
+            fetch('https://personal-schedule-db.herokuapp.com/events/'+e.id , {
             method: 'DELETE'
         })
         
@@ -24,7 +24,7 @@ const EventList = ({ USER_EVENTS }) => {
                         
         const update = { eventType, time, eventNote, isChecked };
         
-        fetch('http://localhost:8000/events/'+ event.id, {
+        fetch('https://personal-schedule-db.herokuapp.com/events/'+ event.id, {
             method: 'PUT',
             headers: {"Content-Type": "application/json" },
             body: JSON.stringify(update)
@@ -36,7 +36,7 @@ const EventList = ({ USER_EVENTS }) => {
    function handleDeleteChecked() {
     USER_EVENTS.map((event) => {
         if (event.isChecked === true) {
-            fetch('http://localhost:8000/events/'+ event.id, {
+            fetch('https://personal-schedule-db.herokuapp.com/events/'+ event.id, {
             method: 'DELETE'
         })
         }
@@ -70,7 +70,7 @@ const EventList = ({ USER_EVENTS }) => {
                         
                         const update = { eventType, time, eventNote, isChecked };
                         console.log({update});
-                        fetch('http://localhost:8000/events/'+ event.id, {
+                        fetch('https://personal-schedule-db.herokuapp.com/events/'+ event.id, {
                             method: 'PUT',
                             headers: {"Content-Type": "application/json" },
                             body: JSON.stringify(update)
