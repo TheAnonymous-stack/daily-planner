@@ -1,6 +1,4 @@
 
-import React from 'react';
-
 import { Link } from 'react-router-dom';
 
 
@@ -14,7 +12,7 @@ const EventList = ({ USER_EVENTS }) => {
         await fetch('https://personal-schedule-db.herokuapp.com/events/'+e.id , {
             method: 'DELETE'
         }). then (
-            await timeout(300)
+            await timeout(1000)
         )
         window.location.reload(false);
     };
@@ -35,13 +33,13 @@ const EventList = ({ USER_EVENTS }) => {
         body: JSON.stringify(update)
 
         }).then(
-           await timeout(300)
+           await timeout(1000)
             
         )
         window.location.reload(false);
         
    };
-   function handleCheckall() {
+   const handleCheckall = () => {
     USER_EVENTS.map((event) => {
         const isChecked = true;
         const eventType = event.eventType;
@@ -59,7 +57,7 @@ const EventList = ({ USER_EVENTS }) => {
     await fetch('https://personal-schedule-db.herokuapp.com/events/'+ event.id, {
                 method: 'DELETE'
    }).then(
-           await timeout(300)
+           await timeout(1000)
             
         )
         window.location.reload(false);
