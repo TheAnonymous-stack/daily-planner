@@ -78,20 +78,21 @@ const EventList = ({ USER_EVENTS }) => {
         body: JSON.stringify(update)
 
     }).then (
-        await timeout(100)
+        await timeout(50)
     );
     window.location.reload(false);
    };
    
 
    
-   
+   const current = new Date();
+   const date =  `${current.getDate()}/${current.getMonth()+1}/${current.getFullYear()}`;
     
     return (
         
     <div className="bigger-eventlist">
     
-        <h1><u>CHECKLIST</u></h1>
+        <h1><u>Date: {date}</u></h1>
         
         
         <div className="event-list">

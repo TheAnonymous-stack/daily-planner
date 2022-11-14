@@ -53,7 +53,13 @@ const ContentHome = ({USER_EVENTS}) => {
             for (let y in array) {
                 var todo = array[y].eventType;
                 var time = array[y].time;
-                statement += todo+" @ "+time+" "
+                var note = array[y].eventNote;
+                if (array[y] === array[array.length - 1]) {
+                    statement += todo+" @ "+time+" "+note;
+                } else {
+                    statement += todo+" @ "+time+" "+note+", ";
+                };
+                
                 
             }
             TimeTable[i]=[];
@@ -62,6 +68,7 @@ const ContentHome = ({USER_EVENTS}) => {
 
         }
     }
+    console.log({TimeTable});
     var GetElement = TimeTable[11];
     TimeTable.splice(11,1);
     TimeTable.splice(0,0,GetElement);
@@ -70,8 +77,12 @@ const ContentHome = ({USER_EVENTS}) => {
     TimeTable.splice(23,1);
     TimeTable.splice(12,0,TakeElement);
 
+    const current = new Date();
+    const date =  `${current.getDate()}/${current.getMonth()+1}/${current.getFullYear()}`;
     return (
         <div class="content-home">
+            <h1><u>Date: {date}</u></h1>
+            <br />
             <div className="home">
                 <div class="row">
                     <div class="hour">TIME</div>
