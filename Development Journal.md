@@ -29,7 +29,7 @@ P: Unable to identify which div class to be selected for design in CSS
 S: Used 'Inspect' function in Google Chrome to help navigate the components of a page
 
 P: Not knowing what colors go well together to make the web more visually pleasant
-S: Found the web called 'colorhunt.io' that provides color palettes based on themes. Experimented different palettes and mixed and match using personal taste.
+S: Found the web called 'colorhunt.co' that provides color palettes based on themes. Experimented different palettes and mixed and match using personal taste.
 
 P: The checkbox is not ticked when clicked
 S: Recognized that the page had reloaded before a response fetched from the database was received, so the value for 'isChecked' remained to be false. Only after several reloads was the tick displayed. Although performance-wise, it is not ideal to make users wait unnecessarily for the web operations, there was no other choice than adding wait time, so that the fetch responses would be received before the page reloads to show the most current state.
