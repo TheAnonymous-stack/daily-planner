@@ -6,7 +6,7 @@ P: No background in JavaScript, HTML, and CSS
 S: Learned and practice such programming languages on freeCodeCamp
 
 P: No background or prior knowledge in web development
-S: Watch React tutorial videos on Youtube by Net Ninja, Web Dev Simplified, etc.
+S: Watch React tutorial videos on Youtube by Net Ninja, Web Dev Simplified, Web Dev at Berkeley, etc.
 
 P: Display a dynamic timetable for the schedule
 S: 
