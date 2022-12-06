@@ -5,7 +5,7 @@ import useFetch from "./useFetch";
 
 
 const Home = () => {
-    const { data: USER_EVENTS } = useFetch('https://personal-schedule-db.herokuapp.com/events');
+    const { data: USER_EVENTS } = useFetch('https://foamy-thankful-backbone.glitch.me/events');
 
     return (
     <div className="bigger-home">

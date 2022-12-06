@@ -19,7 +19,7 @@ const Form = () => {
         setIsPending(true); 
 
 
-        fetch('https://personal-schedule-db.herokuapp.com/events', {
+        fetch('https://foamy-thankful-backbone.glitch.me/events', {
             method: 'POST',
             headers: {"Content-Type": "application/json" },
             body: JSON.stringify(task)

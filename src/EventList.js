@@ -9,7 +9,7 @@ const EventList = ({ USER_EVENTS }) => {
     };
     
     const deleteallrequests = async(e) => {
-        await fetch('https://personal-schedule-db.herokuapp.com/events/'+e.id , {
+        await fetch('https://foamy-thankful-backbone.glitch.me/events/'+e.id , {
             method: 'DELETE'
         }). then (
             await timeout(1000)
@@ -27,7 +27,7 @@ const EventList = ({ USER_EVENTS }) => {
     
     
    const checkallrequest = async(update, event) => {
-    await fetch('https://personal-schedule-db.herokuapp.com/events/'+ event.id, {
+    await fetch('https://foamy-thankful-backbone.glitch.me/events/'+ event.id, {
         method: 'PUT',
         headers: {"Content-Type": "application/json" },
         body: JSON.stringify(update)
@@ -54,7 +54,7 @@ const EventList = ({ USER_EVENTS }) => {
     })
    };
    const deleteallcheckedrequest = async(event) => {
-    await fetch('https://personal-schedule-db.herokuapp.com/events/'+ event.id, {
+    await fetch('https://foamy-thankful-backbone.glitch.me/events/'+ event.id, {
                 method: 'DELETE'
    }).then(
            await timeout(1000)
@@ -72,7 +72,7 @@ const EventList = ({ USER_EVENTS }) => {
     
    };
    const checkrequest = async(update, event) => {
-    await fetch('https://personal-schedule-db.herokuapp.com/events/'+ event.id, {
+    await fetch('https://foamy-thankful-backbone.glitch.me/events/'+ event.id, {
         method: 'PUT',
         headers: {"Content-Type": "application/json" },
         body: JSON.stringify(update)

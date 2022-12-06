@@ -25,7 +25,7 @@ const ContentEditForm = ({event, id}) => {
 
        
 
-        fetch('https://personal-schedule-db.herokuapp.com/events/'+ id, {
+        fetch('https://foamy-thankful-backbone.glitch.me/events/'+ id, {
             method: 'PUT',
             headers: {"Content-Type": "application/json" },
             body: JSON.stringify(task)

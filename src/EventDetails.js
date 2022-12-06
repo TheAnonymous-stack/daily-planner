@@ -5,13 +5,13 @@ import useFetch from './useFetch';
 
 const EventDetails = () => {
     const { id } = useParams();
-    const { data: event, error, isPending } = useFetch('https://personal-schedule-db.herokuapp.com/events/' + id);
+    const { data: event, error, isPending } = useFetch('https://foamy-thankful-backbone.glitch.me/events/' + id);
     const history = useHistory();
     
 
     const handleClick = () => {
         //eslint-disable-next-line
-        fetch('https://personal-schedule-db.herokuapp.com/events/'+ event.id, {
+        fetch('https://foamy-thankful-backbone.glitch.me/events/'+ event.id, {
             method: 'DELETE'
         } 
         ). then (() => {

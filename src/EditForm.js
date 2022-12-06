@@ -9,8 +9,8 @@ const EditForm = () => {
     const location = useLocation();
     const ID = location.state.ID;
     
-    const { data: event } = useFetch('https://personal-schedule-db.herokuapp.com/events/' + ID);
-    const { data: USER_EVENTS} = useFetch('https://personal-schedule-db.herokuapp.com/events');
+    const { data: event } = useFetch('https://foamy-thankful-backbone.glitch.me/events/' + ID);
+    const { data: USER_EVENTS} = useFetch('https://foamy-thankful-backbone.glitch.me/events');
     
     return ( 
         <div className="editform">
