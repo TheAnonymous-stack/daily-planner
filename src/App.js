@@ -1,7 +1,7 @@
 import './App.css';
 import Home from './Home';
 import Navbar from './Navbar';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { HashRouter as Router, Route, Switch } from 'react-router-dom';
 import Form from './Form';
 import EventDetails from './EventDetails';
 import Checklist from './Checklist';
@@ -14,7 +14,7 @@ import EditForm from './EditForm';
 function App() {
   
   return (
-    <Router>
+    <Router baseline="/">
     <div className="App">
       <Navbar />
       
