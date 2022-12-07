@@ -8,6 +8,8 @@ const EditForm = () => {
     
     const location = useLocation();
     const ID = location.state.ID;
+    console.log({ID});
+    // const ID = 5;
     
     const { data: event } = useFetch('https://foamy-thankful-backbone.glitch.me/events/' + ID);
     const { data: USER_EVENTS} = useFetch('https://foamy-thankful-backbone.glitch.me/events');

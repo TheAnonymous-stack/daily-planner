@@ -20,8 +20,12 @@ const EventDetails = () => {
     };
     function EditEvent() {
         
-        history.push("/edit", {ID: id});
+        history.push({
+            pathname: "/edit",
+            state: {ID: id}
+        });
     }
+   
    
     return ( 
    
