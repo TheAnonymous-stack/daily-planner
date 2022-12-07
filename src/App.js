@@ -23,13 +23,13 @@ function App() {
           <Route exact path="/daily-planner/">
             <Home />
           </Route>
-          <Route path="/events/:id">
+          <Route path="/daily-planner/events/:id">
             <EventDetails />
           </Route>
-          <Route path="/add">
+          <Route path="/daily-planner/add">
             <Form />
           </Route>
-          <Route path="/edit">
+          <Route path="/daily-planner/edit">
             <EditForm />
           </Route>
           <Route path="/daily-planner/checklist">
