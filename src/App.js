@@ -20,19 +20,19 @@ function App() {
       
       <div className="content">
         <Switch>
-          <Route exact path="/daily-planner/">
+          <Route exact path="/">
             <Home />
           </Route>
-          <Route path="/daily-planner/events/:id">
+          <Route path="/events/:id">
             <EventDetails />
           </Route>
-          <Route path="/daily-planner/add">
+          <Route path="/add">
             <Form />
           </Route>
-          <Route path="/daily-planner/edit">
+          <Route path="/edit">
             <EditForm />
           </Route>
-          <Route path="/daily-planner/checklist">
+          <Route path="/checklist">
             <Checklist />
           </Route>
           
