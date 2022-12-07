@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 
 
 const EventList = ({ USER_EVENTS }) => {
+    
     function timeout(delay) {
         return new Promise( res => setTimeout(res, delay) );
     };
@@ -81,6 +82,8 @@ const EventList = ({ USER_EVENTS }) => {
         await timeout(50)
     );
     window.location.reload(false);
+    
+    
    };
    
 

@@ -17,9 +17,10 @@ function App() {
     <Router>
     <div className="App">
       <Navbar />
+      
       <div className="content">
         <Switch>
-          <Route exact path="/">
+          <Route exact path="/daily-planner/">
             <Home />
           </Route>
           <Route path="/events/:id">
@@ -31,7 +32,7 @@ function App() {
           <Route path="/edit">
             <EditForm />
           </Route>
-          <Route path="/checklist">
+          <Route path="/daily-planner/checklist">
             <Checklist />
           </Route>
           
